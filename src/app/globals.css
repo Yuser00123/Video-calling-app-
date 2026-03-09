@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 26;
+  --background-end-rgb: 6, 6, 15;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(135deg, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6C5CE7;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A29BFE;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.glass {
+  background: rgba(18, 18, 42, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(108, 92, 231, 0.2);
+}
+
+.glass-hover:hover {
+  background: rgba(26, 26, 62, 0.8);
+  border-color: rgba(108, 92, 231, 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #6C5CE7, #A29BFE, #74b9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+}
+
+.gradient-bg-animated {
+  background: linear-gradient(-45deg, #6C5CE7, #A29BFE, #74b9ff, #6C5CE7);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
+
+.video-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #12122a;
+  border: 1px solid rgba(108, 92, 231, 0.2);
+}
+
+.video-tile:hover {
+  border-color: rgba(108, 92, 231, 0.5);
+  box-shadow: 0 0 30px rgba(108, 92, 231, 0.1);
+}
+
+.admin-tile {
+  border: 2px solid #6C5CE7;
+  box-shadow: 0 0 40px rgba(108, 92, 231, 0.2);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #12122a inset !important;
+  -webkit-text-fill-color: white !important;
+}
